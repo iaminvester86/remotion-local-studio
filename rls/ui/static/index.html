@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Remotion Local Studio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;450;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/static/style.css" />
+</head>
+<body>
+<div id="app">
+  <header id="topbar">
+    <div class="brand">
+      <span class="logo"></span>
+      <div class="brandtext">
+        <strong>Local Studio</strong>
+        <span>video, made on your machine</span>
+      </div>
+    </div>
+    <div class="topcenter">
+      <button id="outputBtn" class="outputchip" title="Where your files are saved">
+        <svg viewBox="0 0 24 24" class="ic"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
+        <span id="outputPath" class="mono">…</span>
+        <span class="edit">change</span>
+      </button>
+      <button id="revealBtn" class="iconbtn" title="Open this folder">
+        <svg viewBox="0 0 24 24" class="ic"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </button>
+    </div>
+    <div id="chips" class="chips"></div>
+  </header>
+
+  <aside id="rail">
+    <nav id="steps"></nav>
+  </aside>
+
+  <main id="panel"><section id="screen"></section></main>
+
+  <aside id="dock">
+    <header><h2>Activity</h2><button id="clearJobs" class="ghost">clear</button></header>
+    <div id="jobs" class="jobs"><p class="empty">No activity yet.<br>Pick a step and generate.</p></div>
+  </aside>
+</div>
+
+<div id="toasts"></div>
+
+<!-- modal for output folder -->
+<div id="modal" class="modal hidden">
+  <div class="modalcard">
+    <h3>Output folder</h3>
+    <p>All generated files and uploads are saved here. You can paste any folder path.</p>
+    <input id="modalInput" type="text" class="mono" spellcheck="false" />
+    <div class="modalrow">
+      <button id="modalCancel" class="ghost">Cancel</button>
+      <button id="modalSave" class="primary">Save</button>
+    </div>
+  </div>
+</div>
+
+<script src="/static/app.js"></script>
+</body>
+</html>

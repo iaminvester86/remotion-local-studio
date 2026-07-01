@@ -1,0 +1,15 @@
+# Core CPU-friendly tools, installed by install.sh / install.ps1.
+# These give you transcription, captions, voiceover, and footage analysis with NO GPU.
+#
+# Heavy GPU tools (image, music, video) are NOT here. They install on first use via
+# `rls install image|music|video`, which also installs the correct PyTorch build for
+# your hardware. See the README "Dependency map" for the full correlation table.
+
+faster-whisper>=1.0
+piper-tts>=1.2
+scenedetect[opencv]>=0.6
+
+# Web UI (the beginner-friendly interface launched with `rls ui`). Lightweight.
+fastapi>=0.110
+uvicorn[standard]>=0.27
+python-multipart>=0.0.9
